@@ -1,0 +1,103 @@
+
+타겟팅
+
+- 구매 가능성 예측
+
+- 비즈니스 이해 -> 데이터 이해 -> 데이터의 준비 -> 모델링 -> 평가 -> 배포
+
+
+
+분석 프로세스
+
+- 데이터 품질 확인 -> EDA를 통한 주요 정보 확인 -> 변수 생성 -> 모델링 -> 결과 확인
+
+
+
+
+
+PM_CUSTOMER_변수설명 한글화
+
+1 customer_id 연속형 고객 ID
+
+2 campaign 명목형
+
+3 response 이분형
+
+4 response_date 명목형 응답일시
+
+5 purchase 이분형 구매여부
+
+6 purchase_date 명목형 구매일시
+
+7 product_id 연속형 구매 상품 ID
+
+8 Rowid 연속형
+
+9 age 연속형 나이
+
+10 age_youngest_child 연속형 가장 어린 자녀의 나이
+
+11 average#balance#feed#index 연속형 평잔 지수
+
+12 branch 명목형 담당 지점
+
+13 debt_equity 연속형 자본대비 부채 비율
+
+14 gender 이분형 성별
+
+15 bad_payment 이분형 연체 여부
+
+16 gold_card 이분형 골드카드 여부
+
+17 pension_plan 이분형 연금 가입
+
+18 household_debt_to_equity_ratio 연속형 자본대비 가계부채 비율
+
+19 income 연속형 수입
+
+20 marital 명목형 결혼상태
+
+21 members_in_household 연속형 가족 수
+
+22 months_current_account 연속형 당좌 계좌 거래 개월수
+
+23 months_customer 연속형 고객 거래기간(년)
+
+24 call_center_contacts 연속형 콜센터 연락건수
+
+25 loan_accounts 연속형 대출 계좌 수
+
+26 number_products 연속형 거래 상품수
+
+27 number_transactions 연속형 거래 횟수
+
+28 non_worker_percentage 연속형
+
+29 white_collar_percentage 연속형
+
+30 rfm_score 연속형 RFM 점수
+
+31 X_random 명목형 데이터셋
+
+
+
+
+
+
+
+히스토그램의 장단점
+
+전체 분포를 직관적으로 확인할 수 있다
+
+집단간 차이를 볼수 있다.
+
+min값과 max 값을 잘 볼 수 있다.
+
+빈도가 너무 작은 구간은 비율을 보기 힘들다
+
+분포의 크기 구간을 쉽게 늘리거나 줄일 수 있다
+
+
+
+
+

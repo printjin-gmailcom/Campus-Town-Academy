@@ -1,0 +1,113 @@
+
+이탈 분석 이슈
+
+- 이탈 이유 분석 필요
+
+- 이탈 여부 분석 필요
+
+
+
+(신용) 평점표 모형
+
+- 개인신용평가회사가 개인에 대한 신용정보를 수집한 후 이를 통계적 방법으로 분석하여, 향후 1년 내 90일 이상 장기 연체 등 신용 위험이 발생할 가능성을 수치화하여 제공하는 지표
+
+- risk management
+
+
+
+신용 평가 시스템 
+
+- 스코어링 모델 부문
+
+- 등급을 활용한 전략 부문
+
+- 모니터링 시스템 부문
+
+
+
+평범표 모형
+
+- 위험 스코어링 모델
+
+- 수익 스코어링 모델
+
+- 이탈 스코어링 모델
+
+
+
+개발 모집단 정의 -> 우 불량 정의 -> 개발 모집단 정의 -> 세분화 -> 표본 추출 
+
+-> 특성 항목 생성 -> 특성항목 선택 1차/2차 -> 모형 적합 -> 배점 적합 -> 스코어 카드 작성 
+
+-> 등급화 
+
+-> 검증
+
+
+
+
+
+
+
+checking 명목형 Status of existing checking account 당좌예금 계좌 상태
+
+duration 연속형 Duration in month 신용거래 개월수
+
+history 명목형 Credit history 신용 이력
+
+purpose 명목형 Purpose of loan 대출 목적
+
+aomunt 연속형 Credit amount 신용 대출 금액
+
+savings 명목형 Savings account or bonds 보통예금 계좌 평균 잔고
+
+employed 명목형 Present employment since 현직장 재직기간
+
+installp 연속형 Installment rate in percentage of disposable income 소득 대비 대출금 비율
+
+marital 명목형 Personal status and sex 결혼 여부 및 성별
+
+coapp 명목형 Other debtors or guarantors 채무 관계
+
+property 명목형 Property 재산
+
+resident 연속형 Present residence since 현 거주지 거주 기간
+
+age 연속형 Age in years 연령
+
+other 명목형 Other installment plans 기타 할부 거래
+
+housing 명목형 Housing 주거 형태
+
+existrc 연속형 Number of existing credits at this bank 당행 현재 대출건수
+
+depends 명목형 Number of people being liable to provide maintenance for 부양가족수
+
+foreign 명목형 foreign worker 외국인 근로자 여부
+
+telephone 명목형 Telephone 전화 소유
+
+job 명목형 Job 직종
+
+
+
+
+
+정리
+
+1.로지스틱 회귀 분석에서 변수의 영향력을 보기 좀더 손쉽게 보기 위해서 명목형 구간화를 해 사용한다.
+
+2.연속형 변수일 경우 target 변수의 우불량 비율(오즈비)가 유사하도록 묶어주는 것이 좋음
+
+3.이를 통해 불량의 비율 단조 증가 또는 단조 감소 하도록 만들어주는것이 필요함
+
+4.최소 구간의 비율은 5% 이상이 되도록 하며, 2~5개 사이로 구간화 하는것을 권장함
+
+5.명목형 변수일 경우 카테고리별 의미를 파악하고 의미가 유사하고, 우불량 비율이 동일한 집단별로 묶어나감
+
+6.명목형 변수는 파생 변수를 만들기 어려움
+
+
+
+
+

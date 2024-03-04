@@ -1,0 +1,85 @@
+
+- INNER.JOIN
+
+- LEFTOUTER.JOIN
+
+- RIGHTOUTER.JOIN
+
+- FULLOUTER.JOIN
+
+- UNION
+
+- UNION ALL
+
+
+
+SELECT *
+
+FROM table1
+
+~ table2
+
+
+
+
+
+SELECT name, height 
+
+FROM students
+
+WHERE height >= (SELECT height FROM students WHERE city = '서울');
+
+
+
+SELECT name, height 
+
+FROM students
+
+WHERE height >= ANY(SELECT height FROM students WHERE city = '서울');
+
+
+
+SELECT name, height 
+
+FROM students
+
+WHERE height >= ALL(SELECT height FROM students WHERE city = '서울');
+
+
+
+정량적 지표 / 정성적 지표
+
+
+
+실질 지표 / 허상 지표
+
+
+
+선행 지표 / 후행 지표
+
+
+
+EAU(활성 사용자 수) UU(순 방문자 수) PV(페이지 열람 수) 
+
+DAU/MAU/WAU(일/주/월 활성 사용자 수)
+
+NPU(신규 유저 수) PU(과금 유저 수)
+
+
+
+Stickiness = DAU/MAU*100 = 고척도
+
+Retention = 유지율
+
+
+
+상관 관계 / 인과 관계
+
+
+
+생존자 편향의 오류
+
+
+
+OMTM( 지금 가장 중요한 단 하나의 지표로 우리가 만드는 서비스가 사용자들에게 전달하는 핵심적인 가치를 반영한 숫자)
+

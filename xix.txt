@@ -1,0 +1,205 @@
+
+이탈 분석
+
+- 신규 고객 모객 비용 > 기존 고객 유지 비용
+
+
+
+이탈 세분화
+
+- 사용 기간, 가치 기반(구매 경형), 인지 가능 여부 등
+
+
+
+정확한 이탈 시점을 대응 할 수 있는 시간을 확보 > 다양한 이탈 방지 대응 가능
+
+
+
+이탈 기준
+
+- 너무 짧을시 ; 이탈 고객 과잉
+
+- 너무 길시 ; 이탈 고객 과소
+
+
+
+ML 학습 관점에서 이탈 문제
+
+- Classification V.S. Regression (Estimation)
+
+ - 어느 고객층을 먼저 접근할까, 각 집단을 어떻게 묶을까
+
+
+
+이탈예측모형개발
+
+- 비즈니스의 이해 - 주요 이슈(ML관점/비즈니스관점) -> 데이터의 이해 및 준비 - 분석 기간, 어떤 데이터 이용, 변수 생성 -> 데이터의 이해 - 데이터 탐색 -> 모델링 -> 평가 -> 배포
+
+
+
+ 
+
+
+
+
+
+변수 설명 _ 한글화
+
+1 REVENUE Mean monthly revenue 수익 
+
+ 2 MOU Mean monthly minutes of use 월 평균 이용 시간 (분) 
+
+3 RECCHRGE Mean total recurring charge 월 평균 기본요금
+
+4 DIRECTAS director assisted calls 
+
+5 OVERAGE Mean overage minutes of use 기본 통화 초과 시간 (분) 
+
+6 ROAM Mean number of roaming calls 로밍 통화 횟수 
+
+7 CHANGEM % Change in minutes of use 사용시간 변화율(%) 
+
+8 CHANGER % Change in revenues 수익 변화율 (%) 
+
+9 DROPVCE Mean number of dropped voice calls 음성통화 끊긴 건수 
+
+10 BLCKVCE Mean number of blocked voice calls 음성통화 차단 건수 
+
+11 UNANSVCE Mean number of unanswered voice calls 받지않은 음성통화 건수 
+
+12 CUSTCARE Mean number of customer care calls 콜센터 통과 건수 
+
+13 THREEWAY Mean number of threeway calls 그룹통화 건수 
+
+14 MOUREC Mean unrounded mou received voice calls 월평균 수신통화시간 
+
+15 OUTCALLS Mean number of outbound voice calls 평균 음성통화 발신 건수 
+
+16 INCALLS Mean number of inbound voice calls 평균 음성통화 수신 건수 
+
+17 PEAKVCE Mean number of in and out peak voice calls 평균 피크 시간대 음성통화 건수 
+
+18 OPEAKVCE Mean number of in and out off-peak voice calls 평균 피크시간대가 아닌 시간대 통화 건수 
+
+19 DROPBLK Mean number of dropped or blocked calls 끊기거나 차단된 통과 건수 
+
+20 CALLFWDV Mean number of call forwarding calls 착신전환 건수 
+
+21 CALLWAIT Mean number of call waiting calls 통화대기 건수 
+
+22 CHURN Churn between 31-60 days after obs_date 이탈 여부 
+
+23 MONTHS Months in Service 서비스 사용기간 
+
+24 UNIQSUBS Number of Uniq Subs 
+
+25 ACTVSUBS Number of Active Subs 
+
+26 CSA Communications Service Area 서비스 지역 
+
+ 27 PHONES # handsets issued 
+
+28 MODELS # model issued
+
+29 EQPDAYS Number of days of the current equipment 폰사용 기간 
+
+ 30 CUSTOMER Customer ID id 
+
+31 AGE1 Age of first HH member 첫번째 세대 구성원 나이 
+
+32 AGE2 Age of second HH member 두번째 세대 구성원 나이 
+
+33 CHILDREN Presence of children in HH 자녀 존재 여부 
+
+34 CREDITA Highest credit rating 신용도 A 
+
+35 CREDITAA High credit rating 신용도 AA 
+
+36 CREDITB Good credit rating 신용도 B 
+
+37 CREDITC Medium credit rating 신용도 C 
+
+38 CREDITDE Low credit rating 신용도 DE 
+
+39 CREDITGY Very low credit rating 신용도 GY 
+
+40 CREDITZ Lowest credit rating 신용도 Z
+
+41 PRIZMRUR rural 시골 
+
+42 PRIZMUB suburban 교외 
+
+43 PRIZMTWN town 도시 
+
+44 REFURB Handset is refurbished 리퍼비시 폰 
+
+45 WEBCAP Hanset is web capable 인터넷 가능 
+
+46 TRUCK Subscriber owns a truck 트럭소유 
+
+47 RV Subscriber owns a recreational vehicle RV 소유 
+
+48 OCCPROF Occupation - professional 전문직 
+
+49 OCCCLER Occupation - clerical 사무직 Cell2Cell 데이터 설명 
+
+50 OCCCRFT Occupation - crafts 생산직 
+
+51 OCCSTUD Occupation - student 학생 
+
+52 OCCHMKR Occupation - homemaker 주부 
+
+53 OCCRET Occupation - retired 은퇴자 
+
+54 OCCSELF Occupation - self-employed 자영업 
+
+ 55 OWNRENT Home ownership is missing 자가 여부 무응답 
+
+56 MARRYUN Marital status unknown 결혼여부 무응답 
+
+57 MARRYYES Married 기혼 
+
+58 MARRYNO Not Married 미혼 
+
+59 MAILORD Buys via mail order 우편 주문을 통한 구매 
+
+60 MAILRES Responds to mail offers 메일 응답 여부 
+
+61 MAILFLAG Has chosen not to be solicited by mail 메일 수신 거부 
+
+62 TRAVEL Has traveled to non-US country 해외영행 여부 
+
+63 PCOWN Owns a personal computer PC 소유 여부 
+
+64 CREDITCD Possesses a credit card 신용카드 소지 
+
+65 RETCALLS Number of calls previously made to retention team 리텐션 콜 수 
+
+66 RETACCPT Number of previous retention offers accepted 리텐션 응답 건수 
+
+67 NEWCELLY Known to be a new cell phone user 신규폰 유저 
+
+68 NEWCELLN Known not to be a new cell phone user 중고 폰 유저 
+
+69 REFER Number of referrals made by subscriber 
+
+70 INCMISS Income data is missing 소득 무응답 
+
+71 INCOME Income (0=>missing) 소득 (0은 무응답) 
+
+72 MCYCLE Owns a motorcycle 오토바이 보유 여부 
+
+73 CREDITAD Number of adjustments made to customer credit rating (up or down) 고객 신용 등급 조정 횟수 
+
+74 SETPRCM Missing data on handset price 핸드폰 가격 무응답 
+
+75 SETPRC Handset price (0=>missing) 핸드폰 가격 
+
+76 RETCALL Customer has made made call to retention team 리텐션 콜 여부 
+
+77 CALIBRAT Calibration sample = 1; Validation sample = 0; 
+
+78 CHURNDEP Churn (=missing for validation sample)
+
+
+

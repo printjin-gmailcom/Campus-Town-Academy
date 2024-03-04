@@ -1,0 +1,339 @@
+
+SQL
+
+- 범용성이 좋음 
+
+- 시간 단축 및 미스커뮤니케이션 방지 
+
+- 조직 데이터 이해도 상승 
+
+- 데이터 기반 의사결정 가능 모든 것을 알 필요는 없음 
+
+- 기초 문법 공부 
+
+- 이미 만들어져 있는 쿼리 공부 
+
+- 자격증 준비(심화): SQLD라는 자격증을 준비함으로써 전반적으로 파악
+
+
+
+기초 용어 정리
+
+- DB(Database): 데이터베이스, 데이터 저장 공간 
+
+- DBMS(Database Management System): 데이터베이스를 관리 및 운영하는 시스템 
+
+- RDMBS(Relational Database Management System): 관계형 모델을 기반으로 하는 DBMS 
+
+- SQL(Structured Query Language): 데이터베이스에 저장된 데이터를 적재, 조작, 검색하기 위한 컴퓨터 언어 
+
+- 스키마(Schema): 전반적인 데이터베이스의 구조
+
+
+
+테이블(TABLE)
+
+- 데이터베이스의 기본적인 데이터 저장 단위로 행(row)과 열(column)로 구성됨
+
+ - 사용자의 접근이 가능한 모든 데이터 보유 
+
+- 도메인(domain): 열의 데이터 타입과 길이
+
+- 키(key): 데이터베이스에 저장되어 있는 레코드를 유일하게 구별할 수 있는 식별자
+
+
+
+- 컬럼은 단일 값을 가짐 
+
+- 컬럼명은 유니크함 
+
+- 한 컬럼의 도메인은 모두 같음 
+
+- 로우는 유니크함 
+
+- 컬럼, 로우의 순서 상관없음
+
+
+
+데이터 종류
+
+- 문자형 데이터 타입: 문자를 저장 (char, varchar 등) 
+
+- 숫자형 데이터 타입: 소수점이 없는 숫자 및 소수점이 있는 숫자를 저장 (int, double 등) 
+
+- 날짜형 데이터 타입: 날짜, 시간 및 날짜와 시간을 저장 (date,time, timestamp 등)
+
+
+
+SQL 문장의 종류
+
+- DDL(Data Definition Language): 데이터 정의어, 테이블 관계나 구조를 생성하는데 사용 
+
+- DML(Data Manipulation Language): 데이터 조작어, 테이블에 데이터를 검색, 삽입, 수정하는데 사용 
+
+- DQL(Data Query Language): 데이터 질의어, DML에서 SELECT 문 
+
+- DCL(Data Control Language): 데이터 제어어, 데이터의 사용 권한 관리
+
+
+
+
+
+SQL 문법 
+
+- 세미 콜론(;)으로 끝맺음 
+
+- 대소문자 구분 없음 
+
+- 보려는 컬럼을 콤마(,)로 분리
+
+
+
+SELECT * 
+
+FROM students 
+
+LIMIT 5; 
+
+
+
+SELECT DISTINCT city 
+
+FROM students; 
+
+
+
+SELECT YEAR() 
+
+FROM students; 
+
+
+
+SELECT NOW(); 
+
+SELECT CURRENT_TIMESTAMP();
+
+
+
+DATE_FORMAT(NOW(), ‘%Y-%m-%d’)
+
+
+
+DAYNAME(‘2022-09-13’) #날짜를 요일로 변환 
+
+
+
+' DATE_ADD(date, INVERVAL expr unit) 
+
+DATE_ADD(‘2009-10-01’, INTERVAL 10 DAY) = 10 '
+
+
+
+DATEDIFF(expr1, expr2) 
+
+ex. DATEDIFF(‘2009-10-05’, ‘2009-10-02’) = 3
+
+
+
+CEIL(): 소수점 올림
+
+FLOOR(): 소수점 내림
+
+ROUND(): 소수점 반올림 
+
+
+
+CAST(expr AS type): 데이터 타입 변환 
+
+
+
+UPPER(): 대문자 변환
+
+LOWER(): 소문자로 변환
+
+
+
+CONCAT(): 문자열 연결 
+
+
+
+REPLACE(): 문자열 치환 
+
+
+
+SELECT * 
+
+FROM students 
+
+WHERE math >= 80;
+
+
+
++, - , *, /
+
+=, !=, >, <, >=, <=
+
+AND, OR, NOT (AND > OR)
+
+BETWEEN, IN
+
+
+
+NULL
+
+
+
+SELECT * 
+
+FROM students 
+
+WHERE name LIKE ‘_민%’;
+
+ > _: 글자 수가 (언더스코의 수만큼) 정해짐/ %: 글자 수가 정해지지 않음
+
+
+
+SELECT * 
+
+FROM students 
+
+ ORDER BY gender, height DESC;
+
+
+
+SUM, AVG, CUONT, MIN, MAX,STDEV, VAR
+
+
+
+SELECT city 
+
+    , AVG(math) 
+
+ FROM students 
+
+GROUP BY city;
+
+
+
+SELECT city 
+
+    , AVG(eng) 평균영어점수 
+
+FROM students 
+
+GROUP BY city 
+
+HAVING AVG(eng) >= 80;
+
+
+
+주석 처리 : -- or /**/
+
+
+
+SELECT 
+
+    CASE WHEN city = '서울' THEN '서울시’ 
+
+        WHEN city = '부산' THEN '경상도’ 
+
+        WHEN city = '대전' THEN '충청도’ 
+
+        WHEN city = '전주' THEN '전라도’
+
+    END AS state 
+
+       , AVG(math) AS avg_math 
+
+FROM students 
+
+GROUP BY state
+
+
+
+SELECT city 
+
+    , AVG(case when gender = '여' then math end) AS f_avg_math 
+
+    , AVG(case when gender = '남' then math end) AS m_avg_math 
+
+FROM students 
+
+GROUP BY city
+
+
+
+
+
+
+
+SELECT * 
+
+ FROM students 
+
+WHERE (English + math + science) / 3 > 70;
+
+
+
+SELECT * 
+
+FROM students 
+
+WHERE (IFNULL(English,0) + IFNULL(math,0) + IFNULL(science,0) / 3 > 70;
+
+
+
+SELECT AVG(math) 
+
+FROM students 
+
+WHERE (IFNULL(English,0) + IFNULL(math,0) + IFNULL(science,0))) / 3 > 70;
+
+
+
+SELECT city, AVG(math) 
+
+FROM students 
+
+WHERE (IFNULL(English,0) + IFNULL(math,0) + IFNULL(science,0)) / 3 > 70 
+
+GRUOP BY city;
+
+
+
+SELECT city, ROUND(AVG(math),2) 
+
+FROM students 
+
+WHERE (IFNULL(English,0) + IFNULL(math,0) + IFNULL(science,0)) / 3 > 70 
+
+GRUOP BY city;
+
+
+
+SELECT * 
+
+FROM students 
+
+WHERE favorite = '수학'
+
+
+
+SELECT MAX(math), MIN(math)
+
+FROM students 
+
+WHERE favorite = '수학'
+
+
+
+SELECT english * 1.01 AS new_english, COUNT(*) AS no_student 
+
+FROM students 
+
+GROUP BY new_english 
+
+ORDER BY new_english 
+
+DESC LIMIT
+

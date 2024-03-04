@@ -1,0 +1,47 @@
+
+동시 구매 상품 - 순차 구매 상품
+
+
+
+연관성 분석 (장바구니 분석)
+
+- support(지지도)
+
+- confidence(신뢰도)
+
+- lift(향상도)
+
+
+
+순차 연관성 
+
+
+
+분석프로세스
+
+- 데이터 품질 확인 -> EDA를 통한 주요 정보 확인 - 데이터 형태 변화 -> RULE 추출
+
+
+
+
+
+E-commerce Sales Forecast 데이터 설명
+
+1 InvoiceNo 주문번호 숫자형
+
+2 StockCode 상품 코드 문자형 
+
+3 Description 상품 설명 명목형 
+
+4 Quantity 주문수량 연속형 
+
+5 InvoiceDate 주문일시 명목형
+
+6 UnitPrice 상품가격 연속형 
+
+7 CustomerID 고객 ID 연속형 
+
+8 Country 국가명 명목형
+
+
+

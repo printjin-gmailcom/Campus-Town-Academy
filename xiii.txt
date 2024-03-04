@@ -1,0 +1,101 @@
+
+AARRR
+
+- Acquisition(획득) ; CAC(고객 획득 비용) UTM 파라미터
+
+- Activation(활성화)
+
+- Retention(유지)
+
+- Revenue(수익) 
+
+- Referral(추천)
+
+
+
+A/B 테스트
+
+
+
+
+
+
+
+SELECT grade, COUNT(*)
+
+FROM teachers
+
+WHERE name like '박%'
+
+GROUP BY grade;
+
+
+
+SELECT work_day, COUNT(*)
+
+FROM teachers t
+
+LEFT JOIN extra_works e
+
+    ON t.gender = e.gender
+
+WHERE grade > 1
+
+GROUP BY work_day;
+
+
+
+SELECT gender, COUNT(*)
+
+FROM teachers t
+
+LEFT JOIN students s
+
+    ON t.grade = s.grade AND t.class
+
+GROUP BY gender;
+
+
+
+SELECT s.name, s.grade
+
+FROM students s
+
+LEFT JOIN teachers t
+
+    ON t.grade = s.grade AND t.class = s.class
+
+WHERE t.id IS NULL;
+
+
+
+SELECT id, name, grade, class
+
+FROM students;
+
+UNION
+
+SELECT id, name, grade, class
+
+FROM new_students;
+
+
+
+SELECT *
+
+FROM teachers t
+
+LEFT JOIN stident s
+
+    ON t.grade = s.grade AND t.class= s.class
+
+UNION
+
+SELECT *
+
+FROM teachers t
+
+RIGHT JOIN stident s
+
+    ON t.grade = s.grade AND t.class= s.class
+
